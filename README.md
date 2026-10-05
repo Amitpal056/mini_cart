@@ -17,7 +17,7 @@ Open two terminals in this `admin_panel` project folder.
 	npm run dev
 	```
 
-	The API seeds six sample products when it connects to an empty database.
+	The API reads the products already saved in MongoDB.
 3. In the second terminal, install and start the frontend from `admin_panel`:
 
 	```sh
@@ -28,6 +28,16 @@ Open two terminals in this `admin_panel` project folder.
 4. Open the Vite URL shown in the terminal. Vite proxies `/api` to the API on port 5000.
 
 The product endpoint is `GET /api/products`. The cart has quantity controls and is saved in browser storage; checkout is not included.
+
+## Deploy on Render
+
+1. Push this project to GitHub.
+2. In Render, choose **New** → **Blueprint**, then select this repository. Render detects `render.yaml`.
+3. When prompted, set `MONGODB_URI` to your Atlas connection string as a secret value. Do not commit it to GitHub.
+4. In Atlas Network Access, allow connections from Render and use a dedicated database user with a strong password.
+5. Deploy. Render builds the React app and serves it together with the API at one URL. The health endpoint is `/api/health`.
+
+The cart remains in each visitor's browser; this app does not have accounts or checkout.
 
 ---
 

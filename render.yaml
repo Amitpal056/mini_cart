@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: morrow-store
+    runtime: node
+    plan: free
+    buildCommand: npm ci && npm --prefix server ci && npm run build
+    startCommand: npm --prefix server start
+    healthCheckPath: /api/health
+    envVars:
+      - key: MONGODB_URI
+        sync: false
