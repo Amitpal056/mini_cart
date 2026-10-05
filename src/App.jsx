@@ -73,8 +73,7 @@ function App() {
   return (
     <div className="store-shell">
       <header className="topbar">
-        <a className="wordmark" href="/" aria-label="Morrow home">morrow<span>.</span></a>
-        <p className="topbar-note">Useful things, made to stay.</p>
+        <a className="wordmark" href="/" aria-label="Morrow home">Ecommerce<span>.</span></a>
         <nav aria-label="Main navigation">
           <a className={!isCartPage ? "nav-link active" : "nav-link"} href="/">Shop</a>
           <a className={isCartPage ? "nav-link active" : "nav-link"} href="/cart">
@@ -125,14 +124,6 @@ function App() {
         </main>
       ) : (
         <main>
-          <section className="intro">
-            <div>
-              <p className="eyebrow">OBJECTS FOR EVERYDAY RITUALS</p>
-              <h1>Keep good<br />things <em>close.</em></h1>
-            </div>
-            <p className="intro-copy">A thoughtful edit for slower mornings, clearer desks, and the little in-between moments.</p>
-            <span className="intro-index">01 — 06</span>
-          </section>
 
           <section className="collection" aria-label="Product collection">
             <div className="collection-heading">
@@ -172,10 +163,7 @@ function App() {
         </main>
       )}
 
-      <footer className="footer">
-        <a className="wordmark" href="/">morrow<span>.</span></a>
-        <p>Made for the everyday.</p>
-      </footer>
+      
     </div>
   );
 }
